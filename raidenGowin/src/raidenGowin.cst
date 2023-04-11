@@ -1,0 +1,52 @@
+//Copyright (C)2014-2022 Gowin Semiconductor Corporation.
+//All rights reserved. 
+//File Title: Physical Constraints file
+//GOWIN Version: 1.9.8.09 Education
+//Part Number: GW1NZ-LV1QN48C6/I5
+//Device: GW1NZ-1
+//Created Time: Wed 04 12 00:32:33 2023
+
+IO_LOC "reset_out" 34;
+IO_PORT "reset_out" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "invert_glitch_out" 30;
+IO_PORT "invert_glitch_out" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "glitch_out" 31;
+IO_PORT "glitch_out" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led_glitch_out" 15;
+IO_PORT "led_glitch_out" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "debug_io0_14_p30" 38;
+IO_PORT "debug_io0_14_p30" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led6_debug" 17;
+IO_PORT "led6_debug" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led5_debug" 18;
+IO_PORT "led5_debug" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led_blink" 16;
+IO_PORT "led_blink" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led2_b" 24;
+IO_PORT "led2_b" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led2_r" 22;
+IO_PORT "led2_r" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led2_g" 23;
+IO_PORT "led2_g" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led0_b" 10;
+IO_PORT "led0_b" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led0_r" 9;
+IO_PORT "led0_r" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "led0_g" 11;
+IO_PORT "led0_g" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "ftdi_tx" 40;
+IO_PORT "ftdi_tx" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "gpio_out" 20;
+IO_PORT "gpio_out" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC "gpio_in2" 19;
+IO_PORT "gpio_in2" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "gpio_in1" 29;
+IO_PORT "gpio_in1" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "trigger_in" 35;
+IO_PORT "trigger_in" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "ftdi_rx" 41;
+IO_PORT "ftdi_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "rst_n" 44;
+IO_PORT "rst_n" PULL_MODE=UP;
+IO_LOC "clk_27" 47;
+IO_PORT "clk_27" IO_TYPE=LVCMOS33 PULL_MODE=UP;

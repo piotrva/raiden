@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module top(
-  input clk,
-  input rst,
+  input clk_27,
+  input rst_n,
   input ftdi_rx,
   input trigger_in,
   input gpio_in1,
@@ -49,6 +49,9 @@ module top(
 
 parameter AUTO = 2'd2;
 
+wire clk;
+wire rst;
+
 wire bit_out;
 wire active;
 
@@ -68,6 +71,13 @@ wire reset_glitcher;
 
 // counter for main loop
 reg [31:0] counter;
+
+pll100MHz PLL1(
+  .clkout(), //output clkout
+  .clkin(clk_27), //input clkin
+  .clkoutd(clk)
+);
+assign rst = ~rst_n;
 
 cmd cmd_inst
 (
@@ -128,21 +138,21 @@ wire enable =  (force_state == AUTO && (((armed && !finished) && trigger) || (gl
   
    pwm pwm_led0_r (
     .clk(clk),
-    .duty(64),
+    .duty(8'd64),
     .signal(finished),
     .state(led0_r)
    );
    
    pwm pwm_led0_g (
     .clk(clk),
-    .duty(16),
+    .duty(8'd16),
     .signal(glitched && !finished),
     .state(led0_g)
    );
    
    pwm pwm_led0_b (
     .clk(clk),
-    .duty(64),
+    .duty(8'd64),
     .signal(!glitched && armed),
     .state(led0_b)
    );
@@ -174,21 +184,21 @@ wire enable =  (force_state == AUTO && (((armed && !finished) && trigger) || (gl
           
    pwm pwm_led2_r (
     .clk(clk),
-    .duty(32),
+    .duty(8'd32),
     .signal(trigger_in),
     .state(led2_r)
    );
    
    pwm pwm_led2_g (
     .clk(clk),
-    .duty(4),
+    .duty(8'd4),
     .signal(trigger_in),
     .state(led2_g)
    );
                       
    pwm pwm_led2_b (
     .clk(clk),
-    .duty(48),
+    .duty(8'd48),
     .signal(trigger_in),
     .state(led2_b)
    );
